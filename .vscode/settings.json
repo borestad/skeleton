@@ -1,0 +1,69 @@
+{
+  "editor.trimAutoWhitespace": true,
+  "codemetrics.basics.ComplexityLevelLowDescription": "",
+  "editor.codeLens": true,
+  "tslint.run": "onType",
+  "tslint.alwaysShowStatus": true,
+  "tslint.autoFixOnSave": true,
+  "tslint.enable": true,
+  "tslint.ignoreDefinitionFiles": false,
+  "tslint.validateWithDefaultConfig": false,
+  "tslint.exclude": "**/node_modules/**",
+  "tslint.jsEnable": true,
+  "tslint.packageManager": "yarn",
+  "prettier.eslintIntegration": true,
+  "prettier.parser": "babylon",
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.tmp/**": true,
+    "**/.code/**": true,
+    "**/.build/**": true,
+    "**/.dist/**": true,
+    "**/.cache/**": true,
+    "**/node_modules/**": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "distribution/": true
+  },
+  "files.associations": {
+    "**/*.js": "javascriptreact"
+  },
+
+  "files.exclude": {
+    ".cache": true,
+    ".code": true,
+    ".gitignore": false,
+    ".tmp": true,
+    ".vscode": false,
+    "*.log": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/node_modules": true,
+    "build": true,
+    "dist": true,
+    "node_modules": true,
+    "reports": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.wordWrap": "on",
+    "editor.renderWhitespace": "all",
+    "editor.acceptSuggestionOnEnter": "off"
+  }
+}

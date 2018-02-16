@@ -1,0 +1,44 @@
+{
+  "awesomeTypescriptLoaderOptions": {
+    "cacheDirectory": ".tmp/tscache",
+    "silent": false,
+    "transpileOnly": false,
+    "useBabel": true,
+    "useCache": true,
+    "useTranspileModule": false
+  },
+  "compileOnSave": true,
+  "compilerOptions": {
+    "esModuleInterop": false,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "jsx": "react",
+    "jsxFactory": "React.createElement",
+    "listEmittedFiles": true,
+    "listFiles": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitHelpers": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": ".tmp/code",
+    "pretty": true,
+    "removeComments": false,
+    "sourceMap": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "ES2017",
+    "types": ["node", "jest"],
+    "watch": false
+  },
+  "exclude": [".tmp", "node_modules", "dist", ".vscode"],
+  // "filesGlob": ["types/**/*.d.ts", "packages/**/*.d.ts", "packages/**/*.ts", "packages/**/*.tsx"]
+  "filesGlob": ["types/**/*.d.ts", "packages/**/*.d.ts", "packages/**/*.ts", "packages/**/*.tsx"]
+}

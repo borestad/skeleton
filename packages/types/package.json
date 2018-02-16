@@ -1,0 +1,10 @@
+{
+  "name": "@webhack/types",
+  "private": true,
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Webhack Global types",
+  "scripts": {
+    "build": "exit 0"
+  }
+}

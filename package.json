@@ -1,0 +1,84 @@
+{
+  "name": "@webhack/webhack",
+  "private": true,
+  "license": "UNKNOWN",
+  "scripts": {
+    "build": "lerna exec 'yarn build'",
+    "compile:js": "hr - && babel packages --out-dir dist --ignore '**/node_modules,**/*.test.js'",
+    "compile:ts": "hr - && tsc",
+    "compile": "yarn compile:js && yarn compile:ts",
+    "dupcode": "hr - && jscpd",
+    "format:js": "hr - && prettier-eslint --write 'packages/**/*.js'",
+    "format:ts": "hr - && prettier --write 'packages/**/*.ts' && tslint --fix -c tslint.json --project tsconfig.json -t codeFrame",
+    "format": "yarn format:js && yarn format:ts",
+    "info:legal": "tldrlegal .",
+    "lint:js": "eslint packages",
+    "lint:ts": "tslint -c tslint.json --project tsconfig.json -t codeFrame",
+    "lint": "hr - && yarn lint:js && hr - && yarn lint:ts",
+    "postinstall": "hr - && node node_modules/husky/bin/install.js && hr - && (yarn outdated --latest || exit 0) && hr - && oao status",
+    "precommit": "lint-staged && yarn test:silent",
+    "reset": "hr - && git clean -dfx && git reset --hard && yarn",
+    "clean": "git clean -dxf --exclude=node_modules",
+    "start": "hr - && concurrently 'echo Server starting...' 'cd packages/dev && yarn start'",
+    "test:silent": "hr - && jest --bail --color=false --coverage=false --verbose=false --notify",
+    "test:watch": "jest --watch",
+    "test": "hr - && jest"
+  },
+  "engines": {
+    "node": ">= 8.x",
+    "npm": ">= 99.yarn-only-monorepo",
+    "yarn": ">= 1.3.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "yarn format:js",
+      "git add"
+    ],
+    "*.{ts,tsx}": [
+      "yarn format:ts",
+      "git add"
+    ]
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "husky": "0.14.3",
+    "lint-staged": "^6.0.0",
+    "node-notifier-cli": "1.1.2"
+  },
+  "dependencies": {
+    "@babel/cli": "7.0.0-beta.37",
+    "@babel/core": "7.0.0-beta.37",
+    "@babel/preset-env": "7.0.0-beta.37",
+    "@types/jest": "22.0.1",
+    "@types/node": "9.4.0",
+    "babel-preset-env": "1.6.1",
+    "concurrently": "3.5.1",
+    "eslint-config-standard": "11.0.0-beta.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "3.0.1",
+    "hr": "0.1.3",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "22.2.2",
+    "jest-cli": "^22.0.6",
+    "jscpd": "0.6.17",
+    "jsperf": "0.2.1",
+    "lerna": "2.7.0",
+    "oao": "1.2.1",
+    "prettier": "1.10.2",
+    "prettier-eslint": "8.8.0",
+    "prettier-eslint-cli": "4.7.0",
+    "prettier-tslint": "0.3.0",
+    "tldrlegal": "1.0.6",
+    "ts-jest": "22.0.1",
+    "tslib": "1.8.1",
+    "tslint": "5.9.1",
+    "tslint-config-prettier": "1.6.0",
+    "tslint-config-standard": "7.0.0",
+    "tslint-eslint-rules": "4.1.1",
+    "typescript": "2.7.1"
+  }
+}

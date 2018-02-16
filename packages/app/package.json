@@ -1,0 +1,22 @@
+{
+  "name": "@webhack/app",
+  "private": true,
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "index.ts",
+  "description": "Webhack example app",
+  "scripts": {
+    "build:dev": "webpack -p",
+    "build": "NODE_ENV=production webpack -p",
+    "start": "webpack-dev-server --progress --colors -d"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "dependencies": {
+    "@webhack/dev": "*",
+    "babel-regenerator-runtime": "6.5.0",
+    "webpack-dev-server": "2.11.1",
+    "webpack": "3.10.0"
+  }
+}

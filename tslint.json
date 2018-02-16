@@ -1,0 +1,45 @@
+{
+  "extends": [
+    "tslint-config-standard",
+    "tslint-eslint-rules",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "no-consecutive-blank-lines": true,
+    "no-duplicate-variable": true,
+    "no-debugger": true,
+    "no-implicit-dependencies": true,
+    "no-irregular-whitespace": true,
+    "no-trailing-whitespace": true,
+    "ordered-imports": [
+      true, {
+        "import-sources-order": "lowercase-last",
+        "named-imports-order": "lowercase-first"
+      }
+    ],
+    "promise-function-async": true,
+    "semicolon": false,
+    "whitespace": [
+      true,
+      "check-decl",
+      "check-operator",
+      "check-rest-spread",
+      "check-separator",
+      "check-type",
+      "check-type-operator",
+      "check-typecast"
+    ],
+    "ban": [
+      true, {
+        "name": ["test", "only"],
+        "message": "Don't focus tests"
+      }, {
+        "name": ["it", "only"],
+        "message": "Don't focus tests"
+      }, {
+        "name": ["describe", "only"],
+        "message": "Don't focus tests"
+      }
+    ]
+  }
+}

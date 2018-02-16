@@ -1,0 +1,7 @@
+{
+    "presets": ["envsdfsdf"],
+    "plugins": [
+        "syntax-async-functions",
+        "transform-regenerator"
+    ]
+}

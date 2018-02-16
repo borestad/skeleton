@@ -1,0 +1,25 @@
+#.cpd.yaml
+blame: true
+# Allow maximum 1% duplicated code
+limit: 1
+path: 'packages'
+languages:
+  - javascript
+  - typescript
+  - jsx
+  - css
+  - htmlmixed   # html mixed source like knockout.js templates
+files:
+  - "**/*.{js,jsx,ts,tsx}"
+exclude:
+  - ".git/*"
+  - "**/.tmp/**"
+  - "**/.eslintcache/**"
+  - "**/dist/*"
+  - "**/node_modules/**"
+  - "**/reports/**"
+reporter: json
+
+languages-exts:
+    typescript:
+        - tsx
