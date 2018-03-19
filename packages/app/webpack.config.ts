@@ -1,2 +1,2 @@
-import { webpack } from '@webhack/dev'
+import { webpack } from '@skeleton/dev'
 export default webpack

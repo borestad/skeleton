@@ -1,4 +1,4 @@
-# Webhack Boilerplate
+# Skeleton Boilerplate
 
 - Typescript: [Typescript](https://www.typescriptlang.org)
 - ES6: [Babel 7](https://babeljs.io/)

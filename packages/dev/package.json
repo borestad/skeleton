@@ -1,5 +1,5 @@
 {
-  "name": "@webhack/dev",
+  "name": "@skeleton/dev",
   "private": true,
   "version": "0.0.1",
   "main": "index.ts",
@@ -7,7 +7,7 @@
     "dev": "cli/cli.js"
   },
   "license": "MIT",
-  "description": "Webhack dev tools",
+  "description": "Skeleton dev tools",
   "scripts": {
     "start": "ts-node --no-cache server/index.ts",
     "build": "exit 0"

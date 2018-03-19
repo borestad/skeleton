@@ -3,6 +3,7 @@
 module.exports = {
   silent: true,
   transformIgnorePatterns: ['/', '<rootDir>/node_modules/(?!@foo)'],
+  testPathIgnorePatterns: ['.tmp', 'build', 'dist', 'node_modules'],
   roots: ['<rootDir>/packages'],
   verbose: true,
   automock: false,

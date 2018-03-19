@@ -1,10 +1,10 @@
 {
-  "name": "@webhack/app",
+  "name": "@skeleton/app",
   "private": true,
   "version": "0.0.1",
   "license": "MIT",
   "main": "index.ts",
-  "description": "Webhack example app",
+  "description": "Skeleton example app",
   "scripts": {
     "build:dev": "NODE_ENV=developent webpack --mode development",
     "build": "NODE_ENV=production webpack -p --mode production",
@@ -14,7 +14,7 @@
     "node": ">= 8"
   },
   "dependencies": {
-    "@webhack/dev": "*",
+    "@skeleton/dev": "*",
     "babel-regenerator-runtime": "6.5.0",
     "webpack": "4.1.1",
     "webpack-cli": "2.0.12",

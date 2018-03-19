@@ -1,9 +1,13 @@
 import * as execa from 'execa'
 import { memoize } from 'lodash'
 
-const gitRevParse = args => () =>
-  execa.shellSync(`git rev-parse ${args}`).stdout
+const exec = args => () => execa.shellSync(args).stdout
+const mexec = memoize(exec)
 
-export const gitRoot = memoize(gitRevParse('--show-toplevel'))
+export const gitRoot = mexec(`
+  git rev-parse --show-toplevel
+`)
 
-export const gitShortHash = memoize(gitRevParse('--short HEAD'))
+export const gitShortHash = mexec(`
+  git rev-parse --short HEAD
+`)
