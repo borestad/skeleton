@@ -5,6 +5,7 @@
     "tslint-config-prettier"
   ],
   "rules": {
+    "interface-name": true,
     "no-consecutive-blank-lines": true,
     "no-duplicate-variable": true,
     "no-debugger": true,

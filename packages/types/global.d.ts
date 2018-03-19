@@ -1,34 +1,14 @@
 // Global definitions for developement
 // ----------------------------------------------------------------------------
-
-declare module '*.json' {
-  const json: any
-  export = json
-}
-
-declare module '*.css' {
-  const styles: any
-  export = styles
-}
-
-declare module '*.woff' {
-  const fonts: any
-  export = fonts
-}
-
-declare module '*.woff2' {
-  const fonts: any
-  export = fonts
-}
+// tslint:disable interface-name
 
 // Redux devtools extension
-// tslint:disable-next-line:interface-name
 declare interface Window {
   devToolsExtension?(): (args?: any) => any
 }
 
 // Webpack extension
-// tslint:disable-next-line:interface-name
+
 declare interface NodeModule {
   hot?: any
 }
@@ -57,4 +37,5 @@ declare interface IEnvGlobals {
   __BUILD_DATE__?: string
   __TEST__?: boolean
   __COVERAGE__?: boolean
+  __GITHASH__?: string
 }

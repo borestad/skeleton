@@ -25,8 +25,15 @@ util.resolve = memoize(relativePath => {
 // ============================================================================
 const NODE_ENV: string = process.env.NODE_ENV || ''
 
-export const env: { [k: string]: any } = {}
-env.isEnv = env => isValidEnv(env) && env === NODE_ENV
-env.isProd = () => env.isEnv('production')
-env.isDev = () => env.isEnv('development')
-env.isTest = () => env.isEnv('test')
+const isEnv = env => isValidEnv(env) && env === NODE_ENV
+const isProd = () => isEnv('production')
+const isDev = () => isEnv('development')
+const isTest = () => isEnv('test')
+
+export const env = {
+  NODE_ENV,
+  isEnv,
+  isProd,
+  isDev,
+  isTest
+}

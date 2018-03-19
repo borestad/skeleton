@@ -1,4 +1,5 @@
-import './example.css'
+// import './example.css'
+import * as text from './example.md'
 
 let fragment = `
 <example>
@@ -9,7 +10,7 @@ let fragment = `
     all without needing to refresh the page.
   </div>
 </example>
-`
+`.concat(text)
 
 export default element => {
   element.insertAdjacentHTML('afterbegin', fragment)
