@@ -1,6 +1,6 @@
 import * as webpack from 'webpack'
-import * as Jarvis from 'webpack-jarvis'
 import * as merge from 'webpack-merge'
+import * as config from './config'
 import base from './config.webpack.base'
 
 const useHotReload = process.env.HOT_RELOAD === '1'
@@ -11,7 +11,9 @@ const hotReload = useHotReload
 
       // bundle the client for webpack-dev-server
       // and connect to the provided endpoint
-      'webpack-dev-server/client?http://localhost:8888',
+      `webpack-dev-server/client?http://${config.server.HOST}:${
+        config.server.PORT
+      }`,
 
       // bundle the client for hot reloading
       // only- means to only hot reload for successful updates
@@ -22,15 +24,29 @@ const hotReload = useHotReload
 // tslint:disable-next-line:no-default-export
 export default () =>
   merge.smart(base(), {
+    mode: 'development',
+
     output: {
       libraryTarget: 'umd'
     },
+
     entry: {
       client: [...hotReload, 'babel-regenerator-runtime', './index.ts']
     },
 
     devtool: 'inline-source-map',
 
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          commons: {
+            test: /node_modules/,
+            name: 'vendors',
+            chunks: 'all'
+          }
+        }
+      }
+    },
     plugins: [
       // enable HMR globally
       new webpack.HotModuleReplacementPlugin(),
@@ -39,10 +55,6 @@ export default () =>
       new webpack.NamedModulesPlugin(),
 
       // do not emit compiled assets that include errors
-      new webpack.NoEmitOnErrorsPlugin(),
-
-      new Jarvis({
-        port: 1337
-      })
+      new webpack.NoEmitOnErrorsPlugin()
     ]
   })

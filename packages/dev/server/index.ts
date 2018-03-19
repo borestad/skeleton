@@ -7,6 +7,7 @@ app.use($ => {
 })
 
 app.listen(() => {
-  console.log('Server started - http://localhost:3000')
+  console.log('API Server started - http://localhost:3000')
 })
+
 app.listen(3000)
