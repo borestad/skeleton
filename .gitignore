@@ -142,3 +142,4 @@ build
 # Don't use npm
 package-lock.json
 
+packages/**/*.js
