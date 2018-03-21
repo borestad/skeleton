@@ -58,7 +58,6 @@
     "ts-jest": "22.4.2",
     "ts-loader": "4.1.0",
     "ts-node": "5.0.1",
-    "tsconfig-paths-webpack-plugin": "3.0.2",
     "tslint-config-prettier": "1.10.0",
     "tslint-eslint-rules": "5.1.0",
     "typescript": "2.7.2",

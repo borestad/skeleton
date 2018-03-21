@@ -1,5 +1,4 @@
 import * as HtmlWebpackPlugin from 'html-webpack-plugin'
-import * as TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import * as webpack from 'webpack'
 import * as config from './config'
 import { loaders } from './config.loaders'
@@ -37,8 +36,7 @@ export default () => {
       '.web.jsx',
       '.jsx',
       '.css'
-    ],
-    plugins: [new TsconfigPathsPlugin()]
+    ]
   }
 
   cfg.module = {
