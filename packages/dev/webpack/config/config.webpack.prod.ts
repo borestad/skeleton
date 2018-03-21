@@ -22,7 +22,7 @@ export default () => {
     output: {
       publicPath: './',
       path: config.paths.dist,
-      filename: `[name].[chunkhash:8].${__BUILD_DATE__}.js`,
+      filename: `[name].[hash:8].${__BUILD_DATE__}.js`,
       chunkFilename: '[name].[chunkhash:8].chunk.js',
       libraryTarget: 'umd'
     },

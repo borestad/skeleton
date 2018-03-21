@@ -29,7 +29,9 @@ export default () =>
     mode: 'development',
 
     output: {
-      libraryTarget: 'umd'
+      libraryTarget: 'umd',
+      filename: `[name].[hash:8].js`,
+      chunkFilename: '[name].[chunkhash:8].chunk.js'
     },
 
     entry: {
@@ -39,20 +41,47 @@ export default () =>
     devtool: 'source-map',
 
     optimization: {
+      runtimeChunk: true,
       splitChunks: {
+        chunks: 'all',
+        minSize: 0,
+        maxAsyncRequests: Infinity,
+        maxInitialRequests: Infinity,
+        name: true,
         cacheGroups: {
-          commons: {
-            test: /node_modules/,
+          default: {
+            chunks: 'async',
+            minSize: 30000,
+            minChunks: 2,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            priority: -20,
+            reuseExistingChunk: true
+          },
+          vendors: {
             name: 'vendors',
-            chunks: 'all'
+            enforce: true,
+            test ({ resource }) {
+              return /node_modules/.test(resource)
+            },
+            priority: -10,
+            reuseExistingChunk: true
+          },
+          commons: {
+            name: 'commons',
+            chunks: 'initial',
+            minChunks: 2,
+            test ({ resource }) {
+              return !/node_modules/.test(resource)
+            },
+            priority: -5,
+            reuseExistingChunk: true
           }
         }
       }
     },
-    plugins: [
-      // enable HMR globally
-      // new webpack.HotModuleReplacementPlugin(),
 
+    plugins: [
       // prints more readable module names in the browser console on HMR updates
       new webpack.NamedModulesPlugin(),
 

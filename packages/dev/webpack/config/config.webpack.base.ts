@@ -78,9 +78,6 @@ export default () => {
     new HtmlWebpackPlugin({
       template: util.resolve('index.html'),
       inject: 'head',
-      files: {
-        js: ['index.js']
-      },
       minify: env.isProd() && {
         removeComments: true,
         collapseWhitespace: true,
