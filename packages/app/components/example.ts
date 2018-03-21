@@ -1,4 +1,4 @@
-// import './example.css'
+import './example.css'
 import * as text from './example.md'
 
 let fragment = `

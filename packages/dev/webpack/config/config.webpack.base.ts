@@ -1,4 +1,5 @@
 import * as HtmlWebpackPlugin from 'html-webpack-plugin'
+import * as path from 'path'
 import * as webpack from 'webpack'
 import * as config from './config'
 import { loaders } from './config.loaders'
@@ -20,7 +21,10 @@ export default () => {
     publicPath: '/',
     path: config.paths.dist,
     filename: 'index.js',
-    library: 'Package'
+    library: 'Package',
+    // Point sourcemap entries to original disk location (format as URL on Windows)
+    devtoolModuleFilenameTemplate: ({ absoluteResourcePath }) =>
+      path.resolve(absoluteResourcePath).replace(/\\/g, '/')
   }
 
   cfg.resolve = {
@@ -61,8 +65,11 @@ export default () => {
     overlay: {
       warnings: true,
       errors: true
-    }
+    },
+    stats: 'errors-only'
   }
+
+  // https://webpack.js.org/configuration/stats/
   cfg.stats = 'errors-only'
 
   cfg.plugins = [
@@ -88,8 +95,6 @@ export default () => {
       }
     })
   ]
-  // https://webpack.js.org/configuration/stats/
-  cfg.stats = {}
 
   return cfg
 }
