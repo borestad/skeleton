@@ -12,7 +12,10 @@ export let loaders: { [key: string]: any } = {}
 loaders.typescript = {
   test: /\.tsx?$/,
   exclude: EXCLUDE,
-  loaders: ['ts-loader']
+  loader: 'ts-loader',
+  options: {
+    transpileOnly: true
+  }
 }
 
 loaders.babel = {

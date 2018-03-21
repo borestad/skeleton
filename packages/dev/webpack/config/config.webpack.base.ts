@@ -1,3 +1,4 @@
+import * as HardSourceWebpackPlugin from 'hard-source-webpack-plugin'
 import * as HtmlWebpackPlugin from 'html-webpack-plugin'
 import * as path from 'path'
 import * as webpack from 'webpack'
@@ -65,12 +66,12 @@ export default () => {
     overlay: {
       warnings: true,
       errors: true
-    },
-    stats: 'errors-only'
+    }
+    // stats: 'errors-only'
   }
 
   // https://webpack.js.org/configuration/stats/
-  cfg.stats = 'errors-only'
+  // cfg.stats = 'errors-only'
 
   cfg.plugins = [
     new webpack.DefinePlugin(config.globals),
@@ -90,7 +91,8 @@ export default () => {
         minifyCSS: true,
         minifyURLs: true
       }
-    })
+    }),
+    new HardSourceWebpackPlugin()
   ]
 
   return cfg
