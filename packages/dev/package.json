@@ -10,7 +10,7 @@
   "description": "Skeleton dev tools",
   "scripts": {
     "start": "ts-node --no-cache server/index.ts",
-    "compile": "tsc",
+    "compile": "tsc -p .",
     "build": "exit 0"
   },
   "resolutions": {

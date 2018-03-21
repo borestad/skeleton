@@ -7,7 +7,7 @@
   "description": "Skeleton example app",
   "scripts": {
     "build:dev": "NODE_ENV=developent webpack --mode development",
-    "compile": "tsc",
+    "compile": "tsc -p .",
     "build": "NODE_ENV=production webpack -p --mode production",
     "start": "NODE_ENV=developent webpack-dev-server --hot --progress --colors -d -p --mode production"
   },
