@@ -7,6 +7,7 @@
   "description": "Skeleton example app",
   "scripts": {
     "build:dev": "NODE_ENV=developent webpack --mode development",
+    "compile": "tsc",
     "build": "NODE_ENV=production webpack -p --mode production",
     "start": "NODE_ENV=developent webpack-dev-server --hot --progress --colors -d -p --mode production"
   },
@@ -16,6 +17,7 @@
   "dependencies": {
     "@skeleton/dev": "*",
     "babel-regenerator-runtime": "6.5.0",
+    "typescript": "2.7.2",
     "webpack": "4.1.1",
     "webpack-cli": "2.0.12",
     "webpack-dev-server": "3.1.1"

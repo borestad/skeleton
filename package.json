@@ -4,11 +4,9 @@
   "version": "0.0.0",
   "license": "UNKNOWN",
   "scripts": {
-    "ci": "yarn compile:ts && yarn lint && yarn build",
-    "build": "lerna exec 'yarn build'",
-    "compile:js": "hr - && babel packages --out-dir dist --ignore '**/node_modules,**/*.test.js'",
-    "compile:ts": "hr - && tsc",
-    "compile": "yarn compile:js && yarn compile:ts",
+    "ci": "yarn compile && yarn lint && yarn build",
+    "build": "cd packages/app && yarn build",
+    "compile": "lerna run 'compile'",
     "dupcode": "hr - && jscpd",
     "format:js": "hr - && prettier-eslint --write 'packages/**/*.js'",
     "format:ts": "hr - && prettier --write 'packages/**/*.ts' && tslint --fix -c tslint.json --project tsconfig.json -t codeFrame",
@@ -42,7 +40,9 @@
     ]
   },
   "workspaces": {
-    "packages": ["packages/*"]
+    "packages": [
+      "packages/*"
+    ]
   },
   "devDependencies": {
     "husky": "0.14.3",
@@ -69,7 +69,7 @@
     "jscpd": "0.6.17",
     "jsperf": "0.2.1",
     "lerna": "2.9.0",
-    "oao": "1.4.1",
+    "oao": "1.5.1",
     "prettier": "1.11.1",
     "prettier-eslint": "8.8.1",
     "prettier-eslint-cli": "4.7.1",

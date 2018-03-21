@@ -12,12 +12,7 @@ export let loaders: { [key: string]: any } = {}
 loaders.typescript = {
   test: /\.tsx?$/,
   exclude: EXCLUDE,
-  loaders: [
-    // Babel is enabled via tsconfig.json
-    // { awesomeTypescriptLoaderOptions.useBabel = true }
-    // See .babelrc for plugins & presets
-    'ts-loader'
-  ]
+  loaders: ['ts-loader']
 }
 
 loaders.babel = {
@@ -82,26 +77,31 @@ loaders.png = {
 
 loaders.json = {
   test: /\.json$/,
+  exclude: EXCLUDE,
   use: 'json-loader'
 }
 
 loaders.ico = {
   test: /\.ico$/,
+  exclude: EXCLUDE,
   use: 'url-loader'
 }
 
 loaders.raw = {
   test: /\.(xml|html|txt|md)$/,
+  exclude: EXCLUDE,
   use: 'raw-loader'
 }
 
 loaders.raw = {
   test: /\.(xml|html|txt)$/,
+  exclude: EXCLUDE,
   use: 'raw-loader'
 }
 
 loaders.markdown = {
   test: /\.md$/,
+  exclude: EXCLUDE,
   use: [
     {
       loader: 'html-loader'

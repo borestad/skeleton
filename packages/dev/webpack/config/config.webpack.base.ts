@@ -1,5 +1,5 @@
-import { CheckerPlugin, TsConfigPathsPlugin } from 'awesome-typescript-loader'
 import * as HtmlWebpackPlugin from 'html-webpack-plugin'
+import * as TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import * as webpack from 'webpack'
 import * as config from './config'
 import { loaders } from './config.loaders'
@@ -11,6 +11,9 @@ export default () => {
 
   cfg.target = 'web'
 
+  cfg.performance = {
+    hints: env.isProd() ? 'warning' : false
+  }
   cfg.bail = true
 
   cfg.output = {
@@ -34,7 +37,8 @@ export default () => {
       '.web.jsx',
       '.jsx',
       '.css'
-    ]
+    ],
+    plugins: [new TsconfigPathsPlugin()]
   }
 
   cfg.module = {
@@ -84,10 +88,7 @@ export default () => {
         minifyCSS: true,
         minifyURLs: true
       }
-    }),
-
-    new TsConfigPathsPlugin(),
-    new CheckerPlugin()
+    })
   ]
   // https://webpack.js.org/configuration/stats/
   cfg.stats = {}

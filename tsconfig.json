@@ -1,6 +1,6 @@
 {
   "awesomeTypescriptLoaderOptions": {
-    "cacheDirectory": "./.tmp/tscache",
+    "cacheDirectory": ".tmp/tscache",
     "silent": false,
     "transpileOnly": true,
     "useBabel": true,
@@ -21,9 +21,10 @@
     "inlineSources": true,
     "jsx": "react",
     "jsxFactory": "React.createElement",
-    "listEmittedFiles": true,
+    "listEmittedFiles": false,
     "listFiles": false,
     "lib": ["es2017", "dom"],
+    "allowJs": false,
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmitHelpers": true,
@@ -31,7 +32,7 @@
     "noImplicitReturns": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "./.tmp/code",
+    "outDir": ".tmp/code",
     "pretty": true,
     "removeComments": false,
     "sourceMap": false,
@@ -40,6 +41,6 @@
     "types": ["node", "jest"],
     "watch": false
   },
-  "exclude": [".tmp", "node_modules", "dist", ".vscode"],
-  "include": ["types/**/*.d.ts", "packages/**/*.d.ts", "packages/**/*.ts", "packages/**/*.tsx"]
+  "exclude": ["**/.tmp/**", "node_modules", "dist", ".vscode"],
+  "include": ["**/*.d.ts", "**/*.ts", "**/*.tsx"]
 }

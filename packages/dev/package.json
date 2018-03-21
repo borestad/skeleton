@@ -10,6 +10,7 @@
   "description": "Skeleton dev tools",
   "scripts": {
     "start": "ts-node --no-cache server/index.ts",
+    "compile": "tsc",
     "build": "exit 0"
   },
   "resolutions": {
@@ -25,7 +26,6 @@
     "@types/node": "9.4.7",
     "@types/tapable": "1.0.0",
     "@types/webpack": "4.1.1",
-    "awesome-typescript-loader": "4.0.1",
     "babel-polyfill": "7.0.0-beta.2",
     "base64-inline-loader": "1.1.1",
     "caniuse-lite": "1.0.30000815",
@@ -45,11 +45,9 @@
     "lodash": "4.17.5",
     "markdown-loader": "2.0.2",
     "marked": "0.3.17",
-    "meow": "^4.0.0",
     "micromatch": "3.1.9",
     "moment": "2.21.0",
     "node-notifier": "5.2.1",
-    "oao": "1.4.1",
     "postcss-cssnext": "3.1.0",
     "postcss-easy-import": "3.0.0",
     "postcss-loader": "2.1.2",
@@ -60,6 +58,7 @@
     "ts-jest": "22.4.2",
     "ts-loader": "4.1.0",
     "ts-node": "5.0.1",
+    "tsconfig-paths-webpack-plugin": "3.0.2",
     "tslint-config-prettier": "1.10.0",
     "tslint-eslint-rules": "5.1.0",
     "typescript": "2.7.2",

@@ -142,4 +142,5 @@ build
 # Don't use npm
 package-lock.json
 
+# Covers 99.99% of all use cases: Don't commit compiled code.
 packages/**/*.js
